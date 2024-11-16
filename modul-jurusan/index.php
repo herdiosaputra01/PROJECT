@@ -20,7 +20,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="float-start">Data Jurusan</h3>
-                        <span class="float-end"><a class="btn btn-primary btn-sm" href=""><i class="fa-solid fa-square-plus"></i> tambah data</a></span>
+                        <span class="float-end"><a class="btn btn-primary btn-sm" href="form.php"><i class="fa-solid fa-square-plus"></i> tambah data</a></span>
                     </div>
                     <div class="card-body">
                         <table class="table">
@@ -33,15 +33,32 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                #1. koneksikan file ini
+                                include("../koneksi.php");
+
+                                #2. menulis query
+                                $tampil = "SELECT * FROM jurusans";
+
+                                #3. jalankan query
+                                $proses = mysqli_query($koneksi, $tampil);
+
+                                #4. looping data dari database
+                                $nomor = 1;
+                                foreach($proses as $data){
+                                ?>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
+                                    <th scope="row"><?=$nomor++?></th>
+                                    <td><?=$data['kode']?></td>
+                                    <td><?=$data['jurusan']?></td>
                                     <td>
                                         <a class="btn btn-primary btn-sm" href=""><i class="fa-solid fa-pen-to-square"></i></a>
                                         <a class="btn btn-danger btn-sm" href=""><i class="fa-solid fa-eraser"></i></a>
                                     </td>
                                 </tr>
+                                <?php
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>
