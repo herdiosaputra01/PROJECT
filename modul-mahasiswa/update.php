@@ -11,15 +11,15 @@ $email = $_POST['email'];
 $no_hp = $_POST['no_hp'];
 
 #3. menulis query
-$sunting = "UPDATE dosens SET nidn='$nidn', nama='$nama', jabatan='$jabatan', email='$email', no_hp='$no_hp' WHERE id='$id'";
+$sunting = "UPDATE dosens SET nidn='$nidn', nama='$nama', jabatan='$jabatan',
+email='$email', no_hp='$no_hp' WHERE id='$id'";
 
 #4. jalankan query
 $proses = mysqli_query($koneksi, $sunting);
 
 #5. mengalihkan halaman
 // header("location:index.php");
-
 ?>
 <script>
     document.location="index.php";
-</script> 
+</script>
