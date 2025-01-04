@@ -32,6 +32,11 @@ if (isset($_POST['tombol'])) {
               </div>';
   }else{
     #proses ubah password
+$sql_ubah = "UPDATE users SET password='$pass2' WHERE id='$login_id'";
+$qry_ubah = mysqli_query($koneksi,$sql_ubah);
+
+//header("location:logout.php");
+
     $pesan = '<div class="alert alert-success" role="alert">
                 <i class="fa-solid fa-triangle-exclamation"></i> Ubah Password Berhasil!!!
               </div>';
@@ -83,11 +88,6 @@ if (isset($_POST['tombol'])) {
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Konfirmasi Password Baru</label>
                 <input type="password" name="pass3" class="form-control" id="exampleInputPassword1">
-              </div>
-
-              <div class="mb-3 form-check">
-                <input type="checkbox" name="cek" value="yes" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Ingat Saya</label>
               </div>
 
               <button type="submit" name="tombol" class="btn btn-primary">Ubah Password</button>
