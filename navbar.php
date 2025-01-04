@@ -19,6 +19,9 @@
           <a class="nav-link active" aria-current="page" href="/herdio62/PROJECT/modul-dosen/index.php">Data Dosen</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/herdio62/PROJECT/ubah-password.php">Ubah Password</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/herdio62/PROJECT/logout.php">Log out</a>
         </li>
 
